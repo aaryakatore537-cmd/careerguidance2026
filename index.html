@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Discover your perfect career path after 10th or Diploma with our interactive Roadmap Builder and Course Guide.">
+  <title>Career Guide - Interactive Roadmap & Courses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dark-mode">
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">Career Guide</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#roadmap-builder" class="nav-link">Roadmap Builder</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#help" class="nav-link">Help Center</a></li>
+        <li><a href="#contact" class="nav-link">Contact US</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="search-toggle" aria-label="Search" class="nav-icon-btn">
+          <span class="nav-icon">🔍</span>
+        </button>
+        <button id="theme-toggle" aria-label="Toggle dark mode" class="nav-icon-btn">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="login-btn" class="btn btn-login">
+          <span>👤</span> Login
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="app">
+    <!-- Login Page -->
+    <section id="login-page" class="page active">
+      <div class="login-full-container">
+        <div class="login-card">
+          <div class="login-logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">Career Guide</span>
+          </div>
+          <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Please sign in to access your Career Roadmap Builder</p>
+          </div>
+          <form id="main-login-form" class="auth-form">
+            <div class="form-group">
+              <label for="main-email">Email Address</label>
+              <input type="email" id="main-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="main-password">Password</label>
+              <input type="password" id="main-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+            <div class="auth-footer">
+              <p>Don't have an account? <a href="#">Create Account</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page">
+      <div class="home-hero">
+        <h1 class="main-title">
+          <span class="gradient-text">Career Roadmap Builder</span>
+        </h1>
+
+        <div class="path-selection">
+          <div class="path-card" data-target="class-10th-courses">
+            <div class="path-icon">🏫</div>
+            <h3>After Class 10th</h3>
+            <p>Explore courses and career paths</p>
+            <button class="btn btn-primary" data-target="class-10th-courses">Explore Options</button>
+            <button class="btn btn-mcq" onclick="window.quiz.startQuiz('10th')">MCQs</button>
+          </div>
+
+          <div class="path-card" data-target="diploma-courses">
+            <div class="path-icon">🏛️</div>
+            <h3>After Diploma</h3>
+            <p>Advanced specializations and career growth</p>
+            <button class="btn btn-primary" data-target="diploma-courses">Explore Options</button>
+            <button class="btn btn-mcq" onclick="window.quiz.startQuiz('diploma')">MCQs</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interest Selection Page -->
+    <section id="interests-page" class="page">
+      <div class="quiz-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 50%"></div>
+        </div>
+        <h2 class="quiz-title">Select Your Interests</h2>
+        <p class="quiz-subtitle">Choose one or more areas that excite you</p>
+        <div class="interests-grid">
+          <label class="interest-card">
+            <input type="checkbox" value="Technology">
+            <div class="card-content">
+              <span class="card-icon">💻</span>
+              <span class="card-label">Technology</span>
+            </div>
+          </label>
+          <label class="interest-card">
+            <input type="checkbox" value="Creativity">
+            <div class="card-content">
+              <span class="card-icon">🎨</span>
+              <span class="card-label">Creativity</span>
+            </div>
+          </label>
+          <label class="interest-card">
+            <input type="checkbox" value="Hands-on">
+            <div class="card-content">
+              <span class="card-icon">🔧</span>
+              <span class="card-label">Hands-on</span>
+            </div>
+          </label>
+          <label class="interest-card">
+            <input type="checkbox" value="Communication">
+            <div class="card-content">
+              <span class="card-icon">🗣️</span>
+              <span class="card-label">Communication</span>
+            </div>
+          </label>
+          <label class="interest-card">
+            <input type="checkbox" value="Business">
+            <div class="card-content">
+              <span class="card-icon">📊</span>
+              <span class="card-label">Business</span>
+            </div>
+          </label>
+          <label class="interest-card">
+            <input type="checkbox" value="Science">
+            <div class="card-content">
+              <span class="card-icon">🔬</span>
+              <span class="card-label">Science</span>
+            </div>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-large" data-target="goals">
+          Continue <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Goal Selection Page -->
+    <section id="goals-page" class="page">
+      <div class="quiz-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 100%"></div>
+        </div>
+        <h2 class="quiz-title">What's Your Main Goal?</h2>
+        <p class="quiz-subtitle">This helps us personalize your roadmap</p>
+        <div class="goals-grid">
+          <label class="goal-card">
+            <input type="radio" name="goal" value="Early Job">
+            <div class="card-content">
+              <span class="card-icon">💼</span>
+              <h3>Early Job</h3>
+              <p>Start earning quickly</p>
+            </div>
+          </label>
+          <label class="goal-card">
+            <input type="radio" name="goal" value="Higher Studies">
+            <div class="card-content">
+              <span class="card-icon">🎓</span>
+              <h3>Higher Studies</h3>
+              <p>Pursue advanced education</p>
+            </div>
+          </label>
+          <label class="goal-card">
+            <input type="radio" name="goal" value="Government Job">
+            <div class="card-content">
+              <span class="card-icon">🏛️</span>
+              <h3>Government Job</h3>
+              <p>Secure stable career</p>
+            </div>
+          </label>
+          <label class="goal-card">
+            <input type="radio" name="goal" value="Own Business">
+            <div class="card-content">
+              <span class="card-icon">🚀</span>
+              <h3>Own Business</h3>
+              <p>Be an entrepreneur</p>
+            </div>
+          </label>
+        </div>
+        <button id="show-roadmap" class="btn btn-primary btn-large">
+          Show My Career Roadmap <span>🎯</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Career Roadmap Page -->
+    <section id="roadmap-page" class="page">
+      <div class="roadmap-container">
+        <h2 class="roadmap-title">🎯 Your Personalized Career Roadmap</h2>
+        <div id="roadmap-content" class="roadmap-content"></div>
+        <button class="btn btn-secondary" data-target="home">
+          <span>←</span> Start Over
+        </button>
+      </div>
+    </section>
+
+    <!-- After Class 10th Courses Page -->
+    <section id="class-10th-courses-page" class="page">
+      <div class="courses-container">
+        <div class="courses-hero-img">
+          <img src="images/hero-10th.png" alt="Class 10th Career Paths" class="hero-image">
+        </div>
+        <h1 class="courses-title">Courses After Class 10th</h1>
+        <p class="courses-subtitle">Click any course to see detailed information</p>
+
+        <div class="courses-grid">
+          <!-- Academic Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">📚</span>
+              <h2>Academic Paths</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="intermediate">Intermediate (11th-12th)</button>
+              <button class="course-item clickable" data-course="short-term-10th">Short-Term Certifications</button>
+            </div>
+          </div>
+
+          <!-- Technical Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">⚙️</span>
+              <h2>Technical & Vocational</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="polytechnic">Diploma Engineering</button>
+              <button class="course-item clickable" data-course="iti">ITI Vocational Trades</button>
+              <button class="course-item clickable" data-course="fire-safety-10th">Fire & Safety Management</button>
+            </div>
+          </div>
+
+          <!-- Medical & Creative -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🩺</span>
+              <h2>Healthcare & Design</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="paramedical-10th">Paramedical Diplomas</button>
+              <button class="course-item clickable" data-course="creative-10th">Creative & Lifestyle</button>
+              <button class="course-item clickable" data-course="interior-design-10th">Interior Design</button>
+            </div>
+          </div>
+
+          <!-- Agriculture & Nature -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🌱</span>
+              <h2>Agriculture & Nature</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="agriculture-10th">Agri & Horticulture</button>
+              <button class="course-item clickable" data-course="integrated-10th">Integrated B.Tech (IIIT)</button>
+            </div>
+          </div>
+
+          <!-- Government / Uniformed Services -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🎖️</span>
+              <h2>Government Job / Uniformed Services</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="uniformed-services-10th">Army & Police Prep</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-large" data-target="home">
+          <span>←</span> Back to Home
+        </button>
+      </div>
+    </section>
+
+    <!-- Diploma Courses Page -->
+    <section id="diploma-courses-page" class="page">
+      <div class="courses-container">
+        <div class="courses-hero-img">
+          <img src="images/hero.png" alt="Career Courses Streams" class="hero-image">
+        </div>
+        <h1 class="courses-title">Courses After Diploma</h1>
+        <p class="courses-subtitle">Click any course to see detailed information</p>
+
+        <div class="admission-info-banner">
+          <div class="admission-card">
+            <span class="admission-icon">📢</span>
+            <div class="admission-text">
+              <h4>Admission after 10+2</h4>
+              <p>Course Duration: 4 Years</p>
+            </div>
+          </div>
+          <div class="admission-card">
+            <span class="admission-icon">⚡</span>
+            <div class="admission-text">
+              <h4>Admission after 10+3 (Diploma)</h4>
+              <p>Course Duration: 3 Years</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="courses-grid">
+          <!-- Technology & AI Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🤖</span>
+              <h2>Technology & AI</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="ai-robotics">AI & Robotics</button>
+              <button class="course-item clickable" data-course="data-science">Data Science & Big Data</button>
+              <button class="course-item clickable" data-course="cyber-security">Cyber Security</button>
+              <button class="course-item clickable" data-course="cloud-computing">Cloud Computing</button>
+              <button class="course-item clickable" data-course="computer-application">Computer Application</button>
+              <button class="course-item clickable" data-course="information-technology">Information Technology
+                (IT)</button>
+              <button class="course-item clickable" data-course="computer-science-engineering">Computer Science and
+                Engineering</button>
+            </div>
+          </div>
+
+          <!-- Core Engineering Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">⚙️</span>
+              <h2>Core Engineering</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="mechanical">Mechanical Engineering</button>
+              <button class="course-item clickable" data-course="civil">Civil Engineering</button>
+              <button class="course-item clickable" data-course="electrical-engineering">Electrical Engineering</button>
+              <button class="course-item clickable" data-course="electronics-communication">Electronics &
+                Communication</button>
+              <button class="course-item clickable" data-course="chemical">Chemical Engineering</button>
+              <button class="course-item clickable" data-course="petroleum-engineering">Petroleum Engineering</button>
+              <button class="course-item clickable" data-course="diesel-mechanics">Diesel Mechanics</button>
+            </div>
+          </div>
+
+          <!-- Science & Healthcare Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🩺</span>
+              <h2>Science & Healthcare</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="dental-hygienist">Dental Hygienist</button>
+              <button class="course-item clickable" data-course="hospital-assistance">Hospital Assistance</button>
+              <button class="course-item clickable" data-course="rural-healthcare">Rural Healthcare</button>
+              <button class="course-item clickable" data-course="pathology-lab">Pathology Lab Technician</button>
+              <button class="course-item clickable" data-course="paramedic-nursing">Paramedic Nursing</button>
+              <button class="course-item clickable" data-course="ecg-technology">ECG Technology</button>
+              <button class="course-item clickable" data-course="xray-technology">X-Ray Technology</button>
+              <button class="course-item clickable" data-course="food-production">Food Production</button>
+            </div>
+          </div>
+
+          <!-- Commerce Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">💼</span>
+              <h2>Commerce & Business</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="tally">Tally</button>
+              <button class="course-item clickable" data-course="banking">Banking</button>
+              <button class="course-item clickable" data-course="risk-insurance">Risk and Insurance</button>
+              <button class="course-item clickable" data-course="financial-accounting">Financial Accounting</button>
+              <button class="course-item clickable" data-course="eaccounting-taxation">E-Accounting & Taxation</button>
+              <button class="course-item clickable" data-course="business-administration">Business
+                Administration</button>
+            </div>
+          </div>
+
+          <!-- Arts Category -->
+          <div class="course-category">
+            <div class="category-header">
+              <span class="category-icon">🎭</span>
+              <h2>Arts & Humanities</h2>
+            </div>
+            <div class="course-list">
+              <button class="course-item clickable" data-course="hotel-management">Hotel Management</button>
+              <button class="course-item clickable" data-course="journalism">Journalism</button>
+              <button class="course-item clickable" data-course="education">Education</button>
+              <button class="course-item clickable" data-course="photography">Photography</button>
+              <button class="course-item clickable" data-course="psychology">Psychology</button>
+              <button class="course-item clickable" data-course="elementary-education">Elementary Education</button>
+              <button class="course-item clickable" data-course="digital-marketing">Digital Marketing</button>
+              <button class="course-item clickable" data-course="fine-arts">Fine Arts</button>
+              <button class="course-item clickable" data-course="english">English</button>
+              <button class="course-item clickable" data-course="fashion-designing">Fashion Designing</button>
+              <button class="course-item clickable" data-course="graphic-designing">Graphic Designing</button>
+              <button class="course-item clickable" data-course="web-development">Web Development</button>
+              <button class="course-item clickable" data-course="web-designing">Web Designing</button>
+              <button class="course-item clickable" data-course="mass-communication">Mass Communication</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-large" data-target="home">
+          <span>←</span> Back to Home
+        </button>
+      </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <!-- About Us Page -->
+    <section id="about-page" class="page">
+      <div class="content-container">
+        <h1 class="section-title">About Career Guide</h1>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>To empower every student in India with clear, data-driven career roadmaps that bypass the confusion of
+              generic advice.</p>
+          </div>
+          <div class="about-card">
+            <h3>Our vision</h3>
+            <p>Creating a future where every diploma and degree leads to a fulfilling and high-growth professional
+              journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Center Page -->
+    <section id="help-page" class="page">
+      <div class="content-container">
+        <h1 class="section-title">Help Center</h1>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>How do I use the Roadmap Builder?</h4>
+            <p>Simply select your interests and goals, and our system will generate a customized path for you.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Is lateral entry possible for all courses?</h4>
+            <p>Most engineering degrees offer lateral entry to diploma holders, typically into the 2nd year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact-page" class="page">
+      <div class="content-container">
+        <h1 class="section-title">Contact Us</h1>
+        <div class="contact-form-card">
+          <form class="contact-form">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="How can we help you?"></textarea>
+            </div>
+            <button class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MCQ Quiz Page -->
+    <section id="mcq-quiz-page" class="page">
+      <div class="content-container" id="mcq-quiz-container">
+        <!-- Dynamic Quiz Content -->
+      </div>
+    </section>
+
+    <div id="course-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="modal search-modal">
+      <div class="modal-content search-content">
+        <span class="modal-close search-close">&times;</span>
+        <div class="search-header">
+          <h2>Search Career Paths</h2>
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="global-search-input"
+              placeholder="Search for courses, careers, or streams (e.g., 'AI', 'Medical', 'Design')...">
+          </div>
+        </div>
+        <div id="search-results" class="search-results">
+          <!-- Results will appear here -->
+          <div class="empty-state">
+            <p>Start typing to explore your future...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-content">
+      <p>© 2025 Career Guide. Empowering students to build their future.</p>
+      <div class="footer-links">
+        <a href="#roadmap-builder">Roadmap Builder</a>
+        <a href="#courses">Courses</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/users.js"></script>
+  <script src="js/career-data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/quiz-data.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/verification.js"></script>
+</body>
+
+</html>
